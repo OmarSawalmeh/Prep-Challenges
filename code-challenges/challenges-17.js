@@ -17,18 +17,34 @@
 const recursionPattern = (int1, int2) => {
 
     // write your code here
-    let arr = [int1];
-    function recursionPattern(int1, int2) {
-        if(int1-int2 <= 0){
-            arr.push(int1-int2);
-            return 
+    // let arr = [int1];
+    // function recursionPattern(int1, int2) {
+    //     if(int1-int2 <= 0){
+    //         arr.push(int1-int2);
+    //         return 
+    //     }
+    //     if(int1-int2 >=0) {
+    //         arr.push(int1-int2);
+    //         return recursionPattern(int1-int2, int2);
+    //     } 
+    //   }
+    //   return recursionPattern(int1, int2);
+
+        
+    let myArray = [];
+    let num = int1;
+    while (int1 <= num) {
+        if (int1 <= 0) {
+            while (int1 <= num) {
+                myArray.push(int1);
+                 int1 += int2;
+            }
+            break;
         }
-        if(int1-int2 >=0) {
-            arr.push(int1-int2);
-            return recursionPattern(int1-int2, int2);
-        } 
-      }
-      return recursionPattern(int1, int2);
+        myArray.push(int1);
+        int1 -= int2;
+    }
+    return myArray;
 }
 // -------------------------------------------------------------------------------------------------------
 
